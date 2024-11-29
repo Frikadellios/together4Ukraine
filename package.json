@@ -1,11 +1,105 @@
 {
   "name": "together4ukraine",
-  "module": "index.ts",
   "type": "module",
+  "version": "1.0.1",
+  "packageManager": "bun@1.1.34",
+  "private": true,
+  "keywords": [
+    "template",
+    "biomejs",
+    "bun",
+    "typescript",
+    "tailwindcss",
+    "astrojs",
+    "cloudflare",
+    "react",
+    "framer-motion",
+    "shadcn"
+  ],
+  "author": {
+    "email": "devopsick@pm.me",
+    "name": "Hrihorii Ilin - @Frikadellios",
+    "url": "https://github.com/Frikadellios"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frikadellios/together4ukraine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Frikadellios/together4ukraine/issues"
+  },
+  "homepage": "https://github.com/Frikadellios/together4ukraine/readme",
+  "engines": {
+    "node": "22.11.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-checker -exclude \"**/node_modules/**\"",
+    "browserslist": "bunx update-browserslist-db@latest",
+    "tailwindcss": "bunx @tailwindcss/cli@next -i ./src/styles/app.css -o ./src/styles/index.css",
+    "css:watch": "bunx @tailwindcss/cli@next -i ./src/styles/app.css -o ./src/styles/index.css --watch",
+    "devs": "bunx --bun astro dev --verbose",
+    "dev": "bun run tailwindcss -m && bunx --bun astro dev --verbose",
+    "start": "bun run cf-typegen && bun run astro check --verbose && bun run tailwindcss -m && bunx --bun astro dev --verbose",
+    "build": "conc bun:build:*",
+    "build:check": "bun run cf-typegen && bun run astro check --verbose",
+    "build:css": "bunx @tailwindcss/cli@next -i ./src/styles/app.css -o ./src/styles/index.css --minify",
+    "build:only": "bunx --bun astro build -- --force ./dist",
+    "preview": "bunx --bun astro build -- --force ./dist && bun run wrangler pages dev ./dist",
+    "astro": "astro",
+    "deploy": "bun run build && bun run wrangler pages deploy ./dist",
+    "inspect": "bunx serve .vite-inspect",
+    "cf-typegen": "wrangler types",
+    "lint": "conc bun:lint:*",
+    "lint:format": "bunx @biomejs/biome format . --write",
+    "lint:fix": "bunx @biomejs/biome check . --fix",
+    "lint:check": "bunx @biomejs/biome check ./* --write --unsafe",
+    "ui": "bunx shadcn-ui@latest",
+    "sharp": "bun scripts/sharp.ts",
+    "translate:auto": "bunx @inlang/cli machine translate --project project.inlang",
+    "translate:build": "bunx @inlang/cli machine translate -f --project project.inlang --targetLanguageTags fr,es,ru,uk,zh,de,pl,en"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@types/bun": "latest",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22.10.1",
+    "@types/web": "^0.0.183",
+    "bun-devtools": "^0.0.2",
+    "bun-types": "^1.1.38",
+    "editorconfig-checker": "^6.0.0",
+    "wrangler": "^3.91.0"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/partytown": "^2.1.2",
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/sitemap": "^3.2.1",
+    "@radix-ui/react-accordion": "^1.2.1",
+    "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tailwindcss/cli": "^4.0.0-beta.4",
+    "@tailwindcss/postcss": "^4.0.0-beta.4",
+    "@tailwindcss/vite": "^4.0.0-beta.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.16.16",
+    "caniuse-lite": "^1.0.30001684",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.1",
+    "framer-motion": "^11.12.0",
+    "lucide-react": "^0.462.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^4.0.0-beta.4",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "trustedDependencies": ["@biomejs/biome", "@parcel/watcher", "esbuild", "sharp", "svelte-preprocess", "workerd"]
 }
