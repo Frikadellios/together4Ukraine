@@ -37,11 +37,12 @@ const { author, keywords, title, copyright, lang, description, bodyClass } = Ast
   </head>
   <body
     class={cn(
-      "flex flex-col items-center bg-chiter text-foreground antialiased min-h-screen",
+      "flex  items-center bg-background text-foreground antialiased min-h-screen",
       bodyClass,
     )}
   >
-    <ContainerDot />
+    <ContainerDot>
     <slot />
+    </ContainerDot>
   </body>
 </html>
