@@ -1,22 +1,21 @@
 ---
-import "@/styles/index.css";
-import ContainerDot from "@/components/layout/containerDot.astro";
-import ProviderAnimations from "@/components/layout/provider-animations.astro";
-import { cn } from "@/lib/utils";
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import '@/styles/index.css'
+import ContainerDot from '@/components/layout/containerDot.astro'
+import ProviderAnimations from '@/components/layout/provider-animations.astro'
+import { cn } from '@/lib/utils'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
 
 export interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  author?: string | undefined;
-  keywords?: string | undefined;
-  copyright?: string | undefined;
-  bodyClass?: string;
-  lang?: string;
+  title?: string | undefined
+  description?: string | undefined
+  author?: string | undefined
+  keywords?: string | undefined
+  copyright?: string | undefined
+  bodyClass?: string
+  lang?: string
 }
 
-const { author, keywords, title, copyright, lang, description, bodyClass } =
-  Astro.props as Props;
+const { author, keywords, title, copyright, lang, description, bodyClass } = Astro.props as Props
 ---
 
 <html lang={lang} dir="ltr" class="scroll-smooth">
@@ -38,7 +37,7 @@ const { author, keywords, title, copyright, lang, description, bodyClass } =
   </head>
   <body
     class={cn(
-      "flex flex-col page bg-background text-foreground antialiased min-h-screen",
+      "flex flex-col items-center bg-chiter text-foreground antialiased min-h-screen",
       bodyClass,
     )}
   >

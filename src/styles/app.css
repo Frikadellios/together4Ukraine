@@ -38,7 +38,7 @@
   --color-popover-foreground: oklch(98.3% 0.004 316.6);
   --color-card: oklch(12.24% 0.022 318.06);
   --color-card-foreground: oklch(99.15% 0.002 316.6);
-  --color-primary: oklch(35.6% 0.174 312.18);
+  --color-primary: oklch(86.01% 0.173 91.84);
   --color-primary-foreground: oklch(84.29% 0.111 316.21);
   --color-secondary: oklch(22.83% 0.024 316.3);
   --color-secondary-foreground: oklch(76.42% 0.041 316.45);
@@ -216,7 +216,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    @apply bg-background text-foreground;
+    @apply bg-chiter text-foreground;
   }
 
   .hero > img {
